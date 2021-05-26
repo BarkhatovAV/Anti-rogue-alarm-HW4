@@ -4,19 +4,16 @@ using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
 
-[RequireComponent(typeof(Animator))]
 [RequireComponent(typeof(AudioSource))]
 public class Entrance : MonoBehaviour
 {
     [SerializeField] private UnityEvent _entered;
     [SerializeField] private UnityEvent _exited;
 
-    private Animator _animator;
     private AudioSource _audioSource;
 
     private void Start()
     {
-        _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
     }
     

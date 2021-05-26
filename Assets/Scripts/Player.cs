@@ -40,10 +40,6 @@ public class Player : MonoBehaviour
     {
         float timeOfAppearancePlayer = 0.5f;
         _color = Color.clear;
-        //_color.a = 0;
-        //_color.r = 0;
-        //_color.g = 0;
-        //_color.b = 0;
         _spriteRenderer.DOFade(0, timeOfAppearancePlayer);
     }
 
