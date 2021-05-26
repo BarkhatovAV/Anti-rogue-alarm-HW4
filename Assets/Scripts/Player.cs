@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
 
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class Player : MonoBehaviour
 {
     [SerializeField] private float _speed;
@@ -36,15 +38,18 @@ public class Player : MonoBehaviour
 
     public void HidePlayer()
     {
-        _color.a = 0;
-        _color.r = 0;
-        _color.g = 0;
-        _color.b = 0;
-        _spriteRenderer.DOFade(0, 0.5f);
+        float timeOfAppearancePlayer = 0.5f;
+        _color = Color.clear;
+        //_color.a = 0;
+        //_color.r = 0;
+        //_color.g = 0;
+        //_color.b = 0;
+        _spriteRenderer.DOFade(0, timeOfAppearancePlayer);
     }
 
     public void FindPlayer()
     {
-        _spriteRenderer.DOFade(1, 0.5f);
+        float timeOfDisappearancePlayer = 0.5f;
+        _spriteRenderer.DOFade(1, timeOfDisappearancePlayer);
     }
 }

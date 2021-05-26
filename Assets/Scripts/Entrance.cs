@@ -4,6 +4,8 @@ using UnityEngine;
 using UnityEngine.Events;
 using DG.Tweening;
 
+[RequireComponent(typeof(Animator))]
+[RequireComponent(typeof(AudioSource))]
 public class Entrance : MonoBehaviour
 {
     [SerializeField] private UnityEvent _entered;
@@ -12,7 +14,7 @@ public class Entrance : MonoBehaviour
     private Animator _animator;
     private AudioSource _audioSource;
 
-    void Start()
+    private void Start()
     {
         _animator = GetComponent<Animator>();
         _audioSource = GetComponent<AudioSource>();
@@ -29,10 +31,11 @@ public class Entrance : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D collision)
     {
+        int durationOfVolumeIncrease = 4;
         if (collision.TryGetComponent(out Player player))
         {
             _exited?.Invoke();
-            _audioSource.DOFade(0, 4);
+            _audioSource.DOFade(0, durationOfVolumeIncrease);
         }
     }
 }
