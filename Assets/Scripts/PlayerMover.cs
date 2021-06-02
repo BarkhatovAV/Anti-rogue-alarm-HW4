@@ -2,28 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-[RequireComponent(typeof(Animator))]
-public class PlayerController : MonoBehaviour
+public class PlayerMover : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    
-    private Animator _animator;
-    
-    void Start()
-    {
-        _animator = GetComponent<Animator>();
-    }
+
+    private bool _isWalk;
+
+    public bool IsWalk => _isWalk;
 
     void Update()
     {
         if (Input.GetKey(KeyCode.D))
         {
             transform.Translate(_speed * Time.deltaTime, 0, 0);
-            _animator.SetBool("Walk", true);
+            _isWalk = true;
         }
         else
         {
-            _animator.SetBool("Walk", false);
+            _isWalk = false;
         }
     }
 }

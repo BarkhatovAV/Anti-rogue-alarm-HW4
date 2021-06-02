@@ -6,7 +6,7 @@ using DG.Tweening;
 
 
 [RequireComponent(typeof(SpriteRenderer))]
-public class HomeVisitChecker : MonoBehaviour
+public class HomeVisiter : MonoBehaviour
 {
     private SpriteRenderer _spriteRenderer;
 

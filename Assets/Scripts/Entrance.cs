@@ -19,7 +19,7 @@ public class Entrance : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.TryGetComponent(out PlayerController player))
+        if (collision.TryGetComponent(out PlayerMover player))
         {
             int durationOfVolumeDown = 4;
             _entered?.Invoke();
@@ -30,7 +30,7 @@ public class Entrance : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         int durationOfVolumeIncrease = 4;
-        if (collision.TryGetComponent(out PlayerController player))
+        if (collision.TryGetComponent(out PlayerMover player))
         {
             _exited?.Invoke();
             _audioSource.DOFade(0, durationOfVolumeIncrease);
