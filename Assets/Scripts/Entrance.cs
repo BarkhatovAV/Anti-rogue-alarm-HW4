@@ -19,9 +19,9 @@ public class Entrance : MonoBehaviour
     
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        int durationOfVolumeDown = 4;
         if (collision.TryGetComponent(out PlayerMover player))
         {
-            int durationOfVolumeDown = 4;
             _entered?.Invoke();
             _audioSource.DOFade(1, durationOfVolumeDown);
         }
