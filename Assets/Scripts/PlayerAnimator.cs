@@ -9,13 +9,13 @@ public class PlayerAnimator : MonoBehaviour
     private PlayerMover _player;
     private Animator _animator;
 
-    void Start()
+    private void Start()
     {
         _animator = GetComponent<Animator>();
         _player = GetComponent<PlayerMover>();
     }
 
-    void Update()
+    private void Update()
     {
         if (_player.IsWalk)
         {

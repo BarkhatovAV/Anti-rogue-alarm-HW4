@@ -10,7 +10,7 @@ public class PlayerMover : MonoBehaviour
 
     public bool IsWalk => _isWalk;
 
-    void Update()
+    private void Update()
     {
         if (Input.GetKey(KeyCode.D))
         {
