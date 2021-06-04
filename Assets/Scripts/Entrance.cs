@@ -10,6 +10,7 @@ public class Entrance : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        int durationOfVolumeDown = 4;
         if (collision.TryGetComponent(out PlayerMover player))
         {
             _entered?.Invoke();
