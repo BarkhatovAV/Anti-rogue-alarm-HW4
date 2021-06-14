@@ -1,6 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.Events;
 
 public class Entrance : MonoBehaviour
@@ -10,7 +8,6 @@ public class Entrance : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        int durationOfVolumeDown = 4;
         if (collision.TryGetComponent(out PlayerMover player))
         {
             _entered?.Invoke();
